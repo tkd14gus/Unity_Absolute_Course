@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Shootable
   - BULLET
+  - PLAYER
   layers:
   - Default
   - TransparentFX
