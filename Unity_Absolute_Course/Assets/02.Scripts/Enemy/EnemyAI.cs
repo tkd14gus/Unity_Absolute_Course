@@ -100,7 +100,7 @@ public class EnemyAI : MonoBehaviour
             //주인공과 적 캐릭터 간의 거리를 계산
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-            //고ㅓㅇ격 사정거리 이내인 경우
+            //공격 사정거리 이내인 경우
             if(dist <= attackDist)
             {
                 state = State.ATTACK;
@@ -153,6 +153,8 @@ public class EnemyAI : MonoBehaviour
                         enemyFire.isFire = true;
                     break;
                 case State.DIE:
+                    this.gameObject.tag = "Untagged";
+
                     isDie = true;
                     enemyFire.isFire = false;
                     //순찰 및 추적을 정지

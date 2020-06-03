@@ -88,6 +88,13 @@ public class FireCtrl : MonoBehaviour
         StartCoroutine(shake.ShakeCamera());
         //Bullet 프리팹을 동적으로 생성
         Instantiate(bullet, firePos.position, firePos.rotation);
+        var _bullet = GameManager.instance.GetBullet();
+        if(_bullet != null)
+        {
+            _bullet.transform.position = firePos.position;
+            _bullet.transform.rotation = firePos.rotation;
+            _bullet.SetActive(true);
+        }
         //파티클 실행
         cartridge.Play();
         //총구 화염 파티클 실행
