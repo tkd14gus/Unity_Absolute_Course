@@ -399,8 +399,8 @@ GameObject:
   - component: {fileID: 6236599897716002940}
   - component: {fileID: 6236599897989929167}
   - component: {fileID: 6236599897989929160}
-  - component: {fileID: 6236599897989929206}
   - component: {fileID: 6236599897989929204}
+  - component: {fileID: 6236599897989929206}
   - component: {fileID: 6236599897989929163}
   - component: {fileID: 6236599897989929161}
   - component: {fileID: 6236599897989929166}
@@ -558,22 +558,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6236599897989929206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6236599897706521564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94bb2073c62b5964dad5dd2223889d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  attackDist: 5
-  traceDist: 10
-  isDie: 0
 --- !u!195 &6236599897989929204
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -596,6 +580,22 @@ NavMeshAgent:
   m_BaseOffset: -0.083
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6236599897989929206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236599897706521564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bb2073c62b5964dad5dd2223889d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  attackDist: 5
+  traceDist: 10
+  isDie: 0
 --- !u!114 &6236599897989929163
 MonoBehaviour:
   m_ObjectHideFlags: 0

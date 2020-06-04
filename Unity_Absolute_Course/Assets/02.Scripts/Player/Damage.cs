@@ -9,7 +9,7 @@ public class Damage : MonoBehaviour
     private const string enemyTag = "ENEMY";
 
     private float initHp = 100.0f;
-    private float currHp;
+    public float currHp;
 
     //BloodScreen 텍스처를 저장하기 위한 변수
     public Image bloodScreen;
@@ -24,9 +24,22 @@ public class Damage : MonoBehaviour
     public delegate void PlayerDieHandler();
     public static event PlayerDieHandler OnPlayerDie;
 
+    void OnEnable()
+    {
+        GameManager.OnItemChange += UpdateSetup;
+    }
+
+    void UpdateSetup()
+    {
+        initHp = GameManager.instance.gameData.hp;
+        currHp += GameManager.instance.gameData.hp - currHp;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        //불러온 데이터 값을 hp에 적용
+        initHp = GameManager.instance.gameData.hp;
         currHp = initHp;
 
         //생명 게이지의 초기 색상을 설정
@@ -46,7 +59,7 @@ public class Damage : MonoBehaviour
             StartCoroutine(ShowBloodScreen());
 
             currHp -= 5.0f;
-            Debug.Log("Plater HP = " + currHp.ToString());
+            //Debug.Log("Plater HP = " + currHp.ToString());
 
             //생명 게이지의 색상 및 크기 변경 함수를 호출
             DisplayHpbar();

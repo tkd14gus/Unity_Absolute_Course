@@ -22,6 +22,7 @@ public class EnemyDamage : MonoBehaviour
     //생명 수치에 따라 fillAmount 속성을 변경할 Image
     private Image hpBarImage;
 
+    int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if(coll.collider.tag == bulletTag)
         {
+            Debug.Log(coll.transform.name);
             //혈흔 효과를 생성하는 함수 호출
             ShowBloodEffect(coll);
             //총알 삭제
@@ -58,13 +60,17 @@ public class EnemyDamage : MonoBehaviour
             hp -= coll.gameObject.GetComponent<BulletCtrl>().damage;
             //생명 게이지의 fillAmount 속성을 변경
             hpBarImage.fillAmount = hp / initHp;
-
-            if(hp <= 0.0f)
+            if (hp <= 0.0f)
             {
                 //적 캐릭터의 상태를 DIE로 변경
                 GetComponent<EnemyAI>().state = EnemyAI.State.DIE;
                 //적 캐릭터가 사망한 이후 생명 게이지를 투명처리
                 hpBarImage.GetComponentsInParent<Image>()[1].color = Color.clear;
+
+                //적 캐릭터의 사망 횟수를 누적시키는 함수 호출
+                GameManager.instance.IncKillCount();
+                //Capsule Collider 컴포넌트를 비활성화
+                GetComponent<CapsuleCollider>().enabled = false;
             }
         }
     }

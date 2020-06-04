@@ -60,7 +60,7 @@ public class BarrelCtrl : MonoBehaviour
         if(coll.collider.CompareTag("BULLET"))
         {
             //총알의 충돌 횟수를 증가시키고 3발 이상 맞았는지 확인
-            if(++hitCount == 3)
+            if (++hitCount == 3)
             {
                 ExpBarrel();
             }

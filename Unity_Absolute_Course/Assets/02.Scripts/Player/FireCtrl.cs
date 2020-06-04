@@ -94,7 +94,8 @@ public class FireCtrl : MonoBehaviour
         //셰이크 효과 호출
         StartCoroutine(shake.ShakeCamera());
         //Bullet 프리팹을 동적으로 생성
-        Instantiate(bullet, firePos.position, firePos.rotation);
+        //Instantiate(bullet, firePos.position, firePos.rotation);
+
         var _bullet = GameManager.instance.GetBullet();
         if(_bullet != null)
         {

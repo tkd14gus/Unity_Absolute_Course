@@ -29,6 +29,16 @@ public class PlayerCtrl : MonoBehaviour
     //Animation 컴포넌트를 저장하기 위한 변수
     public Animation anim;
 
+    void OnEnable()
+    {
+        GameManager.OnItemChange += UpdateSetup;
+    }
+
+    void UpdateSetup()
+    {
+        moveSpeed = GameManager.instance.gameData.speed;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +49,9 @@ public class PlayerCtrl : MonoBehaviour
         //Animation 컴포넌트의 애니메이션 클립을 지정하고 실행
         anim.clip = playerAnim.idle;
         anim.Play();
+
+        //불러온 데이터 값을 moveSpeed에 적용
+        moveSpeed = GameManager.instance.gameData.speed;
     }
 
     // Update is called once per frame
@@ -48,8 +61,8 @@ public class PlayerCtrl : MonoBehaviour
         v = Input.GetAxis("Vertical");
         r = Input.GetAxis("Mouse X");
 
-        Debug.Log("h=" + h.ToString());
-        Debug.Log("v=" + v.ToString());
+        //Debug.Log("h=" + h.ToString());
+        //Debug.Log("v=" + v.ToString());
 
         //전후좌우 이동 방향 벡터 계산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
