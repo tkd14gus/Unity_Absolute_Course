@@ -50,6 +50,17 @@ public class BarrelCtrl : MonoBehaviour
         _audio = GetComponent<AudioSource>();
 
         //Shake 스크립틀르 추출
+        //shake = GameObject.Find("CameraRig").GetComponent<Shake>();
+        StartCoroutine(GetShake());
+    }
+
+    //게임 로직 씬이 로드된 후 필요한 클래스를 참조
+    IEnumerator GetShake()
+    {
+        while(!UnityEngine.SceneManagement.SceneManager.GetSceneByName("Play").isLoaded)
+        {
+            yield return null;
+        }
         shake = GameObject.Find("CameraRig").GetComponent<Shake>();
     }
 
