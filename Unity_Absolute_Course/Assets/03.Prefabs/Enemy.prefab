@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6236599896038837309}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6236599897374178725}
   - component: {fileID: 6236599897374178747}
   - component: {fileID: 6236599897374178724}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6236599897706954626}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rweaponholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6236599897706954632}
   - component: {fileID: 6236599897720123064}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: mutant_meshLod2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6236599897706954644}
   - component: {fileID: 6236599897720123068}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: mutant_mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6236599897706954650}
   - component: {fileID: 6236599897720123070}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: mutant_meshLod1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,8 @@ GameObject:
   - component: {fileID: 6236599897989929163}
   - component: {fileID: 6236599897989929161}
   - component: {fileID: 6236599897989929166}
-  m_Layer: 0
+  - component: {fileID: -6110917629557665663}
+  m_Layer: 14
   m_Name: Enemy
   m_TagString: ENEMY
   m_Icon: {fileID: 0}
@@ -654,6 +655,20 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 2882578997076316083, guid: 6990cae987f5e144eac9e09a0b490054,
     type: 3}
   hpBarOffset: {x: 0, y: 2.2, z: 0}
+--- !u!114 &-6110917629557665663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236599897706521564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a35bc9b16941ed4a85e0bb8db42d790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRange: 15
+  viewAngle: 120
 --- !u!1001 &6236599897348423058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,6 +679,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 03cd26eddfc134a6dbc4d40f15965660, type: 3}
       propertyPath: m_Name
       value: w_rifle02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 03cd26eddfc134a6dbc4d40f15965660, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 03cd26eddfc134a6dbc4d40f15965660, type: 3}
       propertyPath: m_LocalPosition.x
